@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState } from 'react';
 
 import './App.css';
@@ -7,15 +8,31 @@ function App() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmitForm = e => {
+  const handleSubmitForm = async e => {
     e.preventDefault();
 
     console.log('Form submitted:', { name, email, message });
 
-    // Reset form fields
-    setName('');
-    setEmail('');
-    setMessage('');
+    const webhookURL = 'SLACK WEBHOOK URL';
+
+    const data = {
+      text: `New message from ${name}\nEMAIL: ${email}\nMESSAGE: ${message}`
+    };
+
+    const response = await axios.post(webhookURL, JSON.stringify(data), {
+      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+    });
+
+    if (response.status === 200) {
+      alert('Message Sent!');
+
+      // Clear form fields
+      setName('');
+      setEmail('');
+      setMessage('');
+    } else {
+      alert('Error sending message!');
+    }
   };
 
   return (
