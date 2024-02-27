@@ -1,5 +1,6 @@
 Super Easy Contact Form - Slack Webhooks and React
 https://www.youtube.com/watch?v=kyIKpsWNHCw
+https://diligentdev.medium.com/super-easy-contact-form-with-slack-webhooks-and-react-2464c10ba838
 git@github.com:TheDiligentDev/SlackContactForm.git
 
 
