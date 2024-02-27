@@ -24,6 +24,28 @@ function App() {
             value={name}
             onChange={e => setName(e.target.value)}
           />
+          <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='email'>
+            Email
+          </label>
+          <input
+            className='appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'
+            id='email'
+            type='email'
+            placeholder='email@example.com'
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+          />
+          <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='message'>
+            Message
+          </label>
+          <input
+            className='appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'
+            id='message'
+            type='text'
+            placeholder='Enter you message here'
+            value={message}
+            onChange={e => setMessage(e.target.value)}
+          />
         </form>
       </div>
     </div>
